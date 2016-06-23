@@ -8,6 +8,9 @@ var configDB = require('./server/config/database.js');
 mongoose.connect(configDB.url);
 
 var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
+
+app.use(methodOverride());
 app.use(bodyParser.json());
 
 var port = process.env.PORT;

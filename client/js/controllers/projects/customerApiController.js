@@ -4,9 +4,9 @@ myApp.controller('customerApiController', ['$scope', 'Api', function($scope, Api
     $scope.pageSize = 5;
     $scope.currentPage = 1;
     
-    // Api.Customer.query({}, function(data){
-    //     $scope.customers = data;
-    // });
+    Api.Customer.query({}, function(data){
+        $scope.customers = data;
+    });
     
     $scope.deleteAll = function(){
         Api.Customer.delete({}, function(data){
@@ -15,7 +15,7 @@ myApp.controller('customerApiController', ['$scope', 'Api', function($scope, Api
     }
     
     $scope.delete = function(index){
-        window.confirm("Are you sure you want to delete this customer?", function(answer){
+        bootbox.confirm("Are you sure you want to delete this customer?", function(answer){
             if(answer == true)
                 Api.Customer.delete({id: $scope.customers[index]._id}, function(data){
                     $scope.customers.splice(index, 1);
@@ -29,7 +29,7 @@ myApp.controller('customerApiController', ['$scope', 'Api', function($scope, Api
             $scope.customers.push(data);
         },
         function(err){
-            window.alert('Error: ' + err);
+            bootbox.alert('Error: ' + err);
         });
     }
 }]);

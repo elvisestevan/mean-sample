@@ -9,3 +9,9 @@ myApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $
     
     $locationProvider.html5Mode({enabled: true, requireBase: false});
 }]);
+
+myApp.filter('startFrom', function(){
+    return function(data, start){
+        return data.slice(start);
+    }
+});
