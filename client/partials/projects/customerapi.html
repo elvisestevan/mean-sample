@@ -57,6 +57,8 @@
                 </tr>
             </table>
         </div>
-        <pagination total-items="customers.length" ng-model="currentPage" items-per-page="pageSize"></pagination>
+        <div class="col-xs-8 col-xs-offset-2">
+            <uib-pagination total-items="customers.length" ng-model="currentPage" items-per-page="pageSize" max-size="5" rotate="true" force-ellipses="true" ></uib-pagination>
+        </div>
     </div>
 </div>

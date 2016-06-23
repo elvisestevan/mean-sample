@@ -11,3 +11,34 @@
 p {
     text-indent: 40px;
 }
+
+tr.ng-enter{
+    animation: bounceInRight 1s;
+}
+
+/*tr.ng-leave{*/
+/*    animation: bounceInLeft 1s;*/
+/*}*/
+
+#customer-table{
+    height: 400px;
+}
+
+.user-window{
+    border-left: 2px solid black;
+    height: 300px;
+}
+.username{
+    color: red;
+    font-weight: bold;
+}
+
+.chat-window{
+    height: 300px;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+ul {
+    list-style-type: none;
+}
